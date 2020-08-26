@@ -1,0 +1,12 @@
+name: Manually build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl
+        run: curl --show-error -X POST -d {} "${{ secrets.BUILD_HOOK_URL }}"
